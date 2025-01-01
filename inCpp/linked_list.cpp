@@ -8,6 +8,7 @@ class Node {
     Node *link;
     static void presetList();
     static void insertBeginning(int);
+    static void insertEnd(int);
     void displayList();
 };
 
@@ -45,7 +46,7 @@ void Node::presetList() {
     }
 }
 
-//function to add a node to the list at start
+//add a node to the beginning of the list
 void Node::insertBeginning(int value) {
     Node *newNode;
     newNode = new Node();
@@ -60,6 +61,27 @@ void Node::insertBeginning(int value) {
     }
 }
 
+//add a node at the end of the list
+//similar to the insertBeginning();
+void Node::insertEnd(int value) {
+    Node *newNode;
+    newNode = new Node();
+    newNode -> value = value;
+    newNode -> link = nullptr;
+    if (head == nullptr) {
+        head = newNode;
+    }
+    else {
+        Node *temp = head;
+        while (temp != nullptr) {
+            if (temp -> link == nullptr) {
+                temp -> link = newNode;
+            }
+        }
+    }
+}
+
+//display the node's value
 void Node::displayList() {
     Node *temp = head;
     while (temp -> link != nullptr) {
