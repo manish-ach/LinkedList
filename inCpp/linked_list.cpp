@@ -67,7 +67,7 @@ void Node::insertEnd(int value) {
     Node *newNode;
     newNode = new Node();
     newNode -> value = value;
-    newNode -> link = nullptr;
+    newNode -> link = nullptr; //as we know node is to be added at en, we can set its link to null
     if (head == nullptr) {
         head = newNode;
     }
