@@ -3,4 +3,4 @@ Creating linked list using various different languages
 
 # languages
 - C++
-- Rust (in progress)
+- Rust
