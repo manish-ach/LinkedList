@@ -9,6 +9,7 @@ class Node {
     static void presetList();
     static void insertBeginning(int);
     static void insertEnd(int);
+    static void insertAfter(int, int);
     void displayList();
 };
 
@@ -78,6 +79,27 @@ void Node::insertEnd(int value) {
                 temp -> link = newNode;
             }
         }
+    }
+}
+
+//insert after given node
+void Node::insertAfter(int value, int location) {
+    Node *newNode;
+    newNode = new Node();
+    newNode -> value = value;
+    if ( head == nullptr) {
+        newNode -> link = nullptr;
+        head = newNode;
+    }
+    else {
+        Node *temp;
+        temp = head;
+        while (temp -> value != location) {
+            temp = temp -> link;
+        }
+        newNode -> link = temp -> link;
+        temp -> link = newNode;
+        delete temp;
     }
 }
 
